@@ -1,4 +1,4 @@
-import { ArrowRight, Github } from "lucide-react";
+import { ArrowRight, ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
@@ -16,32 +16,32 @@ const projects = [
       "Express",
       "Node.js",
     ],
+    demoUrl: "https://expense-ease-fe.onrender.com/",
     githubUrl: "https://github.com/Aashishkr2003/Expense_Ease",
-    liveUrl: "https://expense-ease-fe.onrender.com/",
   },
   {
     id: 2,
-    title: "Market Segmentation ",
+    title: "Market Segmentation",
     description:
       "An analysis of customer data to identify distinct market segments using ML.",
     image: "/projects/Projectimage2.png",
-    tags: [
-      "Python",
+    tags: ["Python",
       "Machine learning",
       "Pandas",
       "Matplotlib",
-      "Google Colab",
-    ],
+      "Google Colab"],
+    demoUrl: "#",
     githubUrl: "https://github.com/Aashishkr2003/MarketSegmentation",
   },
   {
     id: 3,
     title: "NFC-Ticketing System",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
+      "A secure ticketing system using NFC technology for event management.",
     image: "/projects/Projectimage3.png",
     tags: ["Kotlin", "Android Studio ", "ADB", "NfcAdapter", "HCE"],
-    githubUrl: "#",
+    demoUrl: "https://github.com/Aashishkr2003/CardReaderApp",
+    githubUrl: "https://github.com/Aashishkr2003/CardEmulatorApp",
   },
 ];
 
@@ -75,11 +75,8 @@ export const ProjectsSection = () => {
 
               <div className="p-6">
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
-                    >
+                  {project.tags.map((tag) => (
+                    <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
                       {tag}
                     </span>
                   ))}
@@ -92,22 +89,19 @@ export const ProjectsSection = () => {
                 <div className="flex justify-between items-center">
                   <div className="flex space-x-3">
                     <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                    <a
                       href={project.githubUrl}
                       target="_blank"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                     >
                       <Github size={20} />
                     </a>
-
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
-                    )}
                   </div>
                 </div>
               </div>
