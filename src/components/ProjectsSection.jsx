@@ -17,6 +17,7 @@ const projects = [
 			"Node.js",
 		],
 		githubUrl: "https://github.com/Aashishkr2003/Expense_Ease",
+		liveUrl: "https://expense-ease-fe.onrender.com/",
 	},
 	{
 		id: 2,
